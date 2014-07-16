@@ -1,6 +1,6 @@
 {
     "name": "pake",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "description": "project and subproject manager",
     "author": "Emmanuel Pouthier <emmanuel.pouthier@gmail.com>",
     "repository": {
@@ -10,12 +10,10 @@
     "bugs": {
         "url": "http://github.com/hasardel/pake/issues"
     },
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "http://github.com/hasardel/pake/blob/master/LICENSE"
-        }
-    ],
+    "licenses": [{
+        "type": "MIT",
+        "url": "http://github.com/hasardel/pake/blob/master/LICENSE"
+    }],
     "keywords": [
         "project",
         "tool"
