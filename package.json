@@ -1,0 +1,16 @@
+{
+    "name": "pake",
+    "version": "0.1.0",
+    "author": "Emmanuel Pouthier <emmanuel.pouthier@gmail.com>",
+    "main": "./lib/pake.min.js",
+    "bin": { "pake": "./bin/pake" },
+    "preferGlobal": true
+    "dependencies": {
+        "fs-extra": "^0.10.0"
+    },
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-contrib-uglify": "^0.5.0",
+        "grunt-typescript": "^0.3.7"
+    },
+}
