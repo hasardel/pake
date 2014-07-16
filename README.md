@@ -1,5 +1,6 @@
 # Pake
 
+
 ## Install
 
 ```sh
@@ -12,7 +13,7 @@ Pake depends on [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/).
 ## Usage
 
 ```sh
-$ pake OPTIONS COMMAND
+$ pake [OPTIONS] COMMAND
 ```
 
 where OPTIONS is :
@@ -29,4 +30,10 @@ and COMMAND is :
 * `deps list [MODULENAMEn]`
 * `resolve [MODULENAMEn]`
 
+
+## License
+
+Copyright (c) 2014 Emmanuel Pouthier
+Licensed under the MIT license.
+[https://github.com/hasardel/pake/blob/master/LICENSE](https://github.com/hasardel/pake/blob/master/LICENSE)
 
