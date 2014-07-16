@@ -36,7 +36,6 @@ module pake {
             this._jsonFile = new JsonFile();
             this._templatesDirectory = process.cwd() + '/templates';
             this._modulesDirectory = process.cwd() + '/modules';
-            this._scriptsDirectory = process.cwd() + '/scripts';
             this._buildDirectory = process.cwd() + '/build';
             this._templates = new Object();
             this._modules = new Object();
@@ -49,7 +48,6 @@ module pake {
             // options
             if (res.templatesDir) { this._templatesDirectory = path.resolve(res.templatesDir); }
             if (res.modulesDir) { this._modulesDirectory = path.resolve(res.modulesDir); }
-            if (res.scriptsDir) { this._scriptsDirectory = path.resolve(res.scriptsDir); }
             if (res.buildDir) { this._buildDirectory = path.resolve(res.buildDir); }
             
             // command
@@ -70,12 +68,6 @@ module pake {
                     } else {
                         this._dependenciesList();
                     }
-                }
-            } else if (res.command === 'script') {
-                if (res.scriptArgs) {
-                    this._script(res.scriptName, res.scriptArgs);
-                } else {
-                    this._script(res.scriptName);
                 }
             } else if (res.command === 'resolve') {
                 if (res.moduleNames) {
@@ -222,10 +214,6 @@ module pake {
         
         private _dependenciesList(moduleNames: string[] = null) {
             console.log('deps list ' + moduleNames);
-        }
-        
-        private _script(scriptName: string, scriptArgs: string[] = []) {
-            console.log('script ' + scriptName + ' ' + scriptArgs);
         }
 
         private _resolve(moduleNames: string[] = null) {

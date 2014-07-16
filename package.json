@@ -1,10 +1,28 @@
 {
     "name": "pake",
     "version": "0.1.0",
+    "description": "project and subproject manager",
     "author": "Emmanuel Pouthier <emmanuel.pouthier@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/hasardel/pake.git"
+    },
+    "bugs": {
+        "url": "http://github.com/hasardel/pake/issues"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://github.com/hasardel/pake/blob/master/LICENSE"
+        }
+    ],
+    "keywords": [
+        "project",
+        "tool"
+    ],
     "main": "./lib/pake.min.js",
     "bin": { "pake": "./bin/pake" },
-    "preferGlobal": true
+    "preferGlobal": true,
     "dependencies": {
         "fs-extra": "^0.10.0"
     },
@@ -12,5 +30,5 @@
         "grunt": "^0.4.5",
         "grunt-contrib-uglify": "^0.5.0",
         "grunt-typescript": "^0.3.7"
-    },
+    }
 }

@@ -15,14 +15,13 @@ module pake {
         // grammaire
         // =========
         // <cmdline> ::= pake <options> <command>
-        // <options> ::= '--templates-dir=' . #dir | '--modules-dir=' . #dir | '--scripts-dir=' . #dir | '--build-dir=' . #dir | '--help' | '-h'
-        // <command> ::= <create> | <dependencies> | <script> | <resolve>
+        // <options> ::= '--templates-dir=' . #dir | '--modules-dir=' . #dir | '--build-dir=' . #dir | '--help' | '-h'
+        // <command> ::= <create> | <dependencies> | <resolve>
         // <create> ::= 'create' . #moduleName . [ #templateName ]
         // <dependencies> ::= ( 'dependencies' | 'deps' ) . ( <dependenciesAdd> | <dependenciesRemove> | <dependenciesList> )
         // <dependenciesAdd> ::= 'add' . #moduleName . ( #dependencyName )+
         // <dependenciesRemove> ::= 'remove' . #moduleName . ( #dependencyName )+
         // <dependenciesList> ::= 'list' . ( #moduleName )*
-        // <script> ::= 'script' . #scriptName . ( #scriptArg )*
         // <resolve> ::= 'resolve' . ( #moduleName )*
 
         private _argv: any;
@@ -38,7 +37,6 @@ module pake {
             str += 'where <options> is :\n';
             str += '  --templates-dir=DIR\n';
             str += '  --modules-dir=DIR\n';
-            str += '  --scripts-dir=DIR\n';
             str += '  --build-dir=DIR\n';
             str += '  --help\n';
             str += '  -h\n';
@@ -48,7 +46,6 @@ module pake {
             str += '  deps add MODULENAME DEPENDENCYNAMEn\n';
             str += '  deps remove MODULENAME DEPENDENCYNAMEn\n';
             str += '  deps list [MODULENAMEn]\n';
-            str += '  script SCRIPTNAME SCRIPTARGn\n';
             str += '  resolve [MODULENAMEn]\n';
             
             console.log(str);
@@ -144,8 +141,6 @@ module pake {
                         this._result['templatesDir'] = arg.substr(16);
                     } else if (arg.substr(0, 14) === '--modules-dir=') {
                         this._result['modulesDir'] = arg.substr(14);
-                    } else if (arg.substr(0, 14) === '--scripts-dir=') {
-                        this._result['scriptsDir'] = arg.substr(14);
                     } else if (arg.substr(0, 12) === '--build-dir=') {
                         this._result['buildDir'] = arg.substr(12);
                     } else { // --help -h ou autres
@@ -161,7 +156,7 @@ module pake {
         }
 
         private _parseCommand(): boolean {
-            return (this._parseCreate() || this._parseDependencies() || this._parseScript() || this._parseResolve());
+            return (this._parseCreate() || this._parseDependencies() || this._parseResolve());
         }
 
         private _parseCreate(): boolean {
@@ -260,26 +255,6 @@ module pake {
                     this._parseArrayVariable('moduleNames');
                     
                     return true;
-                }
-            }
-
-            return false;
-        }
-
-        private _parseScript(): boolean {
-            var arg = this._nextArg();
-
-            if (arg) {
-                if (arg === 'script') {
-                    this._result['command'] = 'script';
-                    this._consumeArg();
-                    
-                    if (this._parseVariable('scriptName')) {
-                        this._parseArrayVariable('scriptArgs');
-                        return true;
-                    }
-
-                    this._restoreArg();
                 }
             }
 
