@@ -33,7 +33,5 @@ and COMMAND is :
 
 ## License
 
-Copyright (c) 2014 Emmanuel Pouthier
-Licensed under the MIT license.
-[https://github.com/hasardel/pake/blob/master/LICENSE](https://github.com/hasardel/pake/blob/master/LICENSE)
+Copyright (c) 2014 Emmanuel Pouthier [https://github.com/hasardel/pake/blob/master/LICENSE](https://github.com/hasardel/pake/blob/master/LICENSE)
 
