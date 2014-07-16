@@ -12,21 +12,21 @@ Pake depends on [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/).
 ## Usage
 
 ```sh
-$ pake [<options>] command
+$ pake OPTIONS COMMAND
 ```
 
-where <options> is :
-  --templates-dir=DIR
-  --modules-dir=DIR
-  --build-dir=DIR
-  --help
-  -h
+where OPTIONS is :
+* `--templates-dir=DIR`
+* `--modules-dir=DIR`
+* `--build-dir=DIR`
+* `--help`
+* `-h`
 
-and <command> is :
-  create MODULENAME [TEMPLATENAME]
-  deps add MODULENAME DEPENDENCYNAMEn
-  deps remove MODULENAME DEPENDENCYNAMEn
-  deps list [MODULENAMEn]
-  resolve [MODULENAMEn]
+and COMMAND is :
+* `create MODULENAME [TEMPLATENAME]`
+* `deps add MODULENAME DEPENDENCYNAMEn`
+* `deps remove MODULENAME DEPENDENCYNAMEn`
+* `deps list [MODULENAMEn]`
+* `resolve [MODULENAMEn]`
 
 
