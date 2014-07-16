@@ -1,4 +1,13 @@
 
+/*
+ * pake
+ * https://github.com/hasardel/pake
+ *
+ * Copyright (c) 2014 Emmanuel Pouthier
+ * Licensed under the MIT license.
+ * https://github.com/hasardel/pake/blob/master/LICENSE
+ */
+
 declare var require: any;
 declare var process: any;
 var fs = require('fs');
